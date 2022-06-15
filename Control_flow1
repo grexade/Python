@@ -1,0 +1,90 @@
+# This is a sample Python script.
+
+# Press ⌃R to execute it or replace it with your code.
+# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
+
+
+def print_hi(name):
+    # Use a breakpoint in the code line below to debug your script.
+    print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
+    print()
+
+
+def num_checker():
+    print("Welcome To Number Checker!")
+    num = int(input("Enter a Number: "))
+
+    if num % 2 == 0:
+        print("This is an Even Number")
+    else:
+        print("This is an Odd Number")
+
+    print()
+
+
+def shape_printer():
+    print("Welcome To Triangle Shape Printer!")
+    lines = int(input("How many lines do you want?: "))
+
+    for count in range(lines):
+        for space in range(lines-count):
+            print(" ", end="")
+
+        for space in range(count*2+1):
+            print("+", end="")
+
+        print()
+
+    print()
+
+
+def my_divisor():
+    print("Welcome To Divisor List!")
+    num = int(input("Enter a Number: "))
+
+    for i in range(2, num):
+        if num % i == 0:
+            print(i)
+
+    print()
+
+
+def prime_checker():
+    print("Welcome To Prime Number Checker!")
+    num = int(input("Enter a Number: "))
+
+    is_prime = True
+
+    for i in range(2, num):
+        if num % i == 0:
+            is_prime = False
+            break
+
+    if is_prime:
+        print("%d is a prime number" % num)
+    else:
+        print("%d is not a prime number" % num)
+    print()
+
+
+def factorial():
+    print("Welcome To Factorial Calculator!")
+    num = int(input("Enter a Number: "))
+    result = 1
+    for i in range(1, num+1):
+        result = result * i
+
+    print(result)
+    print()
+
+
+# Press the green button in the gutter to run the script.
+if __name__ == '__main__':
+    print_hi('Grexade')
+
+num_checker()
+shape_printer()
+my_divisor()
+prime_checker()
+factorial()
+# See PyCharm help at https://www.jetbrains.com/help/pycharm/
