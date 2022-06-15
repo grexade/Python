@@ -1,0 +1,144 @@
+# This is a sample Python script.
+
+# Press ⌃R to execute it or replace it with your code.
+# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
+import random
+
+
+def print_hi(name):
+    # Use a breakpoint in the code line below to debug your script.
+    print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
+
+
+def num_pattern():
+    print("Welcome to Number Pattern Printing! ")
+    for i in range(5, 0, -1):
+        for j in range(1, i+1, 1):
+            print(j, end=" ")
+        print()
+    print()
+
+
+def right_triangle():
+    print("Welcome to Right Angled Number Pattern Printing! ")
+    for i in range(1, 6, 1):
+        for j in range(1, i + 1, 1):
+            print(j, end=" ")
+        print()
+    print()
+
+
+def left_triangle():
+    print("Welcome to Right Angled Star Pattern Printing! ")
+    rows = 5
+    for j in range(1, rows + 1):
+        print("* " * j)
+
+    print()
+
+
+def triangle(lines):
+    print("Welcome to Triangle Pattern Printing! ")
+    for count in range(5):
+        for space in range(lines - count):
+            print(" ", end="")
+
+        for space in range(count * 2 + 1):
+            print("+", end="")
+
+        print()
+    print()
+
+
+def integer_output():
+    print("Welcome to Digits Display! ")
+    n = int(input(" Enter a Number: "))
+    while n > 0:
+        r = n % 10
+        print(r)
+        n = n // 10
+
+    print()
+
+
+def net_calc():
+    print("Welcome to Your Net Salary Calculator! ")
+    gross_salary = int(input(" Enter your gross Salary: "))
+
+    if gross_salary < 1000:
+        net_salary = gross_salary - (0.05 * gross_salary) - (0.05 * gross_salary)
+        print(" Net Salary is : ", net_salary)
+    elif 3000 > gross_salary >= 1000:
+        net_salary = gross_salary - (0.1 * gross_salary) - (0.15 * gross_salary)
+        print(" Net Salary is : ", net_salary)
+    elif 5000 > gross_salary >= 3000:
+        net_salary = gross_salary - (0.15 * gross_salary) - (0.15 * gross_salary)
+        print(" Net Salary is : ", net_salary)
+    else:
+        net_salary = gross_salary - (0.2 * gross_salary) - (0.2 * gross_salary)
+        print(" Net Salary is : ", net_salary)
+
+    print()
+
+
+def word_reversal():
+    print("Welcome to Word Reversal Program! ")
+    word = input(" Enter a word to reverse: ")
+
+    rev = word[::-1]
+    print(rev)
+    print()
+
+
+def alphabet_checker():
+    print("Welcome to the Alphabet Checker Program! ")
+    word = input(" Enter a String: ")
+
+    vowels = 0
+    cons = 0
+
+    for ch in word:
+        if ch in ["a", "e", "i", "o", "u"]:
+            vowels += 1
+        else:
+            cons += 1
+
+    print("Vowels: ", vowels)
+    print("Consonants: ", cons)
+
+    print()
+
+
+def guessing_game():
+    print("Welcome to the Guessing Game Program! ")
+    n = random.randint(1, 20)
+
+    while True:
+        guess = int(input(" Enter an Integer between 1 to 20: "))
+        if guess < n:
+            print("Number is Low! ")
+        elif guess > n:
+            print("Number is High! ")
+        else:
+            print("Congratulations! You guessed Correctly :) ")
+            break
+
+    print()
+
+
+# Press the green button in the gutter to run the script.
+if __name__ == '__main__':
+    print_hi('Grexade')
+    print()
+
+num_pattern()
+right_triangle()
+left_triangle()
+triangle(5)
+
+integer_output()
+net_calc()
+word_reversal()
+alphabet_checker()
+guessing_game()
+# See PyCharm help at https://www.jetbrains.com/help/pycharm/
