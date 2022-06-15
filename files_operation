@@ -1,0 +1,118 @@
+# This is a sample Python script.
+
+# Press ⌃R to execute it or replace it with your code.
+# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
+from turtle import pd
+
+
+def modify(stdid, field, new_value):
+
+    with open('students.txt', 'r') as std:
+        content = []
+        for i in std:
+            content.append(i.replace("\n", ""))
+
+    new_content = []
+    for each in content:
+        new = each.split(",")
+        if int(new[0]) == stdid:
+            if field == "id":
+                new[0] = new_value
+            elif field == "name":
+                new[1] = new_value
+            elif field == "cgpa":
+                new[2] = new_value
+            elif field == "date":
+                new[3] = new_value
+            elif field == "gender":
+                new[4] = new_value
+            else:
+                print("please correct the field name!")
+        new_content.append(",".join(new))
+
+        with open('students.txt', 'w') as latest:
+            for line in new_content:
+                latest.write(f"{line}\n")
+
+
+def insert(stdid, name, cgpa, date, gender):
+    with open('students.txt', 'a') as students:
+        data = str(stdid) + "," + name + "," + str(cgpa) + "," + date + "," + gender
+        students.writelines(data)
+
+
+def delete(stdid):
+    with open("students.txt", 'r') as f:
+        content = []
+        for i in f:
+            content.append(i.replace("\n", ""))
+
+    for record in content:
+        if int(record [0:4]) == stdid:
+            content.remove(record)
+
+    with open("students. txt", 'w') as edited:
+        for line in content:
+            edited.write(f"{line}\n")
+
+
+def display():
+    print("Below are the list of students in your file")
+    with open('students.txt', 'r') as f:
+        content = []
+        for i in f:
+            content.append(i.replace("\n", ""))
+
+        for record in content:
+            n = record.split(",")
+            print(f"{n[0]}\t{n[1]}\t{n[2]}\t{n[3]}\t{n[4]}")
+
+
+def stats():
+    num_stud = 0
+    num_male = 0
+    num_female = 0
+    newcgpa = 0.0
+    avg_cgpa = 0.0
+    with open('students.txt', 'r') as students:
+        content = []
+        for line in students:
+            content.append(line.replace("\n", ""))
+
+    for record in content:
+        num_stud += 1
+        n = record.split(",")
+        if "F" in n:
+            num_female += 1
+        if "M" in n:
+            num_male += 1
+        newcgpa += float(n[2])
+
+    avg_cgpa = newcgpa / num_stud
+
+    with open('stats.txt', 'w') as new:
+        new.write("\nNumber of males :" + str(num_male))
+        new.write("\nNumber of females :" + str(num_female))
+        new.write("\nAverage CGPA :" + str(avg_cgpa))
+        new.write("\nTotal Number Of students :" + str(num_stud))
+
+
+# Press the green button in the gutter to run the script.
+if __name__ == '__main__':
+
+    display()
+
+    print()
+
+    modify('1234', 'name', 'Dharani')
+
+    insert(2341, 'Tom Jones', 3.1, '12-08-1991', 'M')
+
+    print()
+
+    delete("1235")
+
+    print()
+
+    stats()
+# See PyCharm help at https://www.jetbrains.com/help/pycharm/
