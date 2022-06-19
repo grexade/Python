@@ -1,0 +1,80 @@
+print("Example of digits multiplication")
+print('*' * 10)
+print()
+
+
+print("Example of name input")
+first = 'ade'
+last = 'rex'
+num = 1
+n = 0
+while True:
+    if n == 4:
+        break
+    print(n)
+    n = n + 1
+
+zork =0
+print("before", zork)
+for i in [9,42,654,654,6,3,5,6,65,]:
+    zork += i
+    print(i,"->", zork)
+print("After", zork)
+
+
+print()
+found = False
+print('Before', found)
+for values in [9,41,12,3,74,15]:
+    if values == 3:
+        found = True
+        print(found, values)
+    else:
+        found = False
+        print(found, values)
+
+
+print()
+
+msg1 = f'{first} [{last}] +is a coder'
+msg2 =  f'{num} is {first}'
+print(msg1)
+print(msg2)
+
+print(first + 'before')
+
+for i in [2,1,5]:
+    print(i)
+
+print()
+
+i=1
+while True:
+    if i%3 ==0:
+        break
+    print(i)
+
+    i+=1
+
+print()
+smallest = None
+print("Before:", smallest)
+for itervar in [3, 41, 12, 9, 74, 15]:
+    if smallest is None or itervar < smallest:
+        smallest = itervar
+        break
+    print("Loop:", itervar, smallest)
+print("Smallest:", smallest)
+
+fname = input('enter a file name: ')
+try:
+    fhand = open(fname)
+except:
+    print("file cannot be opened", fname)
+    quit()
+
+count = 0
+for line in fhand:
+    if line.startswith('subject'):
+        count+=1
+print('there were', count, 'subject lines in', fname)
