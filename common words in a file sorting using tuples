@@ -34,5 +34,8 @@ temp = sorted(temp, reverse=True)
 for v,k in temp[:5]:
     print(k,v)
 
+print()
+print(sorted([(v,k) for k,v in di.items()], reverse=True))
+
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
