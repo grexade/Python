@@ -1,0 +1,38 @@
+# This is a sample Python script.
+
+# Press ⌃R to execute it or replace it with your code.
+# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
+
+
+def print_hi(name):
+    # Use a breakpoint in the code line below to debug your script.
+    print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
+
+
+# Press the green button in the gutter to run the script.
+if __name__ == '__main__':
+    print_hi("It's Grexade")
+
+with open('words.txt', 'r') as hand:
+    di = dict()
+    for line in hand:
+        line = line.rstrip()
+        words = line.split()
+        for w in words:
+            di[w] = di.get(w,0) + 1
+
+print(di)
+print()
+
+temp = list()
+for k,v in di.items():
+    newtemp = (v,k)
+    temp.append(newtemp)
+
+temp = sorted(temp, reverse=True)
+
+for v,k in temp[:5]:
+    print(k,v)
+
+
+# See PyCharm help at https://www.jetbrains.com/help/pycharm/
