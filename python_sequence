@@ -1,3 +1,4 @@
+#Tuples
 def rectangle_info(length, width):
     area = length * width
     perimeter = 2 * (length + width)
@@ -7,3 +8,9 @@ area, perimeter = rectangle_info(2, 10)
 
 print("Area:", area)
 print("Perimeter:", perimeter)
+
+#Dictionaries
+Menu = {'meal_1':'Spaghetti', 'meal_2':'Fries', 'meal_3':'Cheeseburger', 'meal_4':'Lasagna'}
+Dessert = ['Pancakes', 'Ice-cream', 'Tiramisu']
+Menu['meal_5']= 'Soup'
+Menu['meal_6']= Dessert
