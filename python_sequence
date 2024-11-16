@@ -1,0 +1,9 @@
+def rectangle_info(length, width):
+    area = length * width
+    perimeter = 2 * (length + width)
+    return area, perimeter
+
+area, perimeter = rectangle_info(2, 10)
+
+print("Area:", area)
+print("Perimeter:", perimeter)
