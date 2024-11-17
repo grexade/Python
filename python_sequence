@@ -14,3 +14,11 @@ Menu = {'meal_1':'Spaghetti', 'meal_2':'Fries', 'meal_3':'Cheeseburger', 'meal_4
 Dessert = ['Pancakes', 'Ice-cream', 'Tiramisu']
 Menu['meal_5']= 'Soup'
 Menu['meal_6']= Dessert
+
+#iterations
+for number in range(1, 31):
+  if number % 2 == 0:
+    print("Even ", end="")
+  else:
+    print(number, end=" ")
+
